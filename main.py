@@ -1,128 +1,24 @@
 text = input("DIGITE O TEXTO: ")
-keys_encrypt = {
-    "a": "c",
-    "A": "C",
-    "b": "d",
-    "B": "D",
-    "c": "i",
-    "C": "I",
-    "d": "h",
-    "D": "H",
-    "e": "o",
-    "E": "O",
-    "f": "l",
-    "F": "L",
-    "g": "u",
-    "G": "U",
-    "h": "p",
-    "H": "P",
-    "i": "a",
-    "I": "A",
-    "j": "t",
-    "J": "T",
-    "k": "g",
-    "K": "G",
-    "l": "x",
-    "L": "X",
-    "m": "m",
-    "M": "M",
-    "n": "b",
-    "N": "B",
-    "o": "s",
-    "O": "S",
-    "p": "f",
-    "P": "F",
-    "q": "y",
-    "Q": "Y",
-    "r": "j",
-    "R": "J",
-    "s": "e",
-    "S": "E",
-    "t": "n",
-    "T": "N",
-    "u": "k",
-    "U": "K",
-    "v": "r",
-    "V": "R",
-    "w": "q",
-    "W": "Q",
-    "x": "v",
-    "X": "V",
-    "y": "w",
-    "Y": "W",
-    "z": "z",
-    "Z": "Z",
-    " ": " "
-}
-keys_decrypt = {
-    "c": "a",
-    "C": "A",
-    "d": "b",
-    "D": "B",
-    "i": "c",
-    "I": "C",
-    "h": "d",
-    "H": "D",
-    "o": "e",
-    "O": "E",
-    "l": "f",
-    "L": "F",
-    "u": "g",
-    "U": "G",
-    "p": "h",
-    "P": "H",
-    "a": "i",
-    "A": "I",
-    "t": "j",
-    "T": "J",
-    "g": "k",
-    "G": "K",
-    "x": "l",
-    "X": "L",
-    "m": "m",
-    "M": "M",
-    "b": "n",
-    "B": "N",
-    "s": "o",
-    "S": "O",
-    "f": "p",
-    "F": "P",
-    "y": "q",
-    "Y": "Q",
-    "j": "r",
-    "J": "R",
-    "e": "s",
-    "E": "S",
-    "n": "t",
-    "N": "T",
-    "k": "u",
-    "K": "U",
-    "r": "v",
-    "R": "V",
-    "q": "w",
-    "Q": "W",
-    "v": "x",
-    "V": "X",
-    "W": "y",
-    "W": "Y",
-    "z": "z",
-    "Z": "Z",
-    " ": " "
-}
+
 mode = print("[1] Encrypt\n[2] Decrypt\n"), input("SELECIONE O MODO: ")
 
-if mode[1] == '1':
-    counter = 0
-    while counter < len(text):
-        text = text.replace(text[counter], keys_encrypt[text[counter]])
-        counter = counter + 1
-if mode[1] == '2':
-    counter = 0
-    while counter < len(text):
-        text = text.replace(text[counter], keys_decrypt[text[counter]])
-        counter = counter + 1
+
 if mode[1] == '1' or mode[1] == '2':
-    print("OUTPUT: "+text)
+    if mode[1] == '1':
+        counter = 0
+        while counter < len(text):
+            text = text.replace(text[counter], keys_encrypt[text[counter]])
+            counter = counter + 1
+    if mode[1] == '2':
+        counter = 0
+        while counter < len(text):
+            text = text.replace(text[counter], keys_decrypt[text[counter]])
+            counter = counter + 1
 else: 
     print("Erro: nenhum modo disponivel selecionado")  
+
+
+
+print("OUTPUT: "+text)
+
 
